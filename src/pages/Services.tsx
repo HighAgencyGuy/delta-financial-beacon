@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -21,7 +20,7 @@ import {
 } from 'lucide-react';
 
 const Services = () => {
-  const [expandedService, setExpandedService] = useState<number | null>(0);
+  const [expandedService, setExpandedService] = useState<number | null>(null);
 
   const servicePackages = [
     {
@@ -252,8 +251,14 @@ const Services = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{
+            backgroundImage: `url('/lovable-uploads/80445a9f-18d5-4319-ad59-9f9d16baab82.png')`
+          }}
+        ></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
             Industry-Specific
             <span className="block text-yellow-400">Financial Solutions</span>
@@ -463,7 +468,7 @@ const Services = () => {
             </Link>
             
             <a
-              href="https://wa.me/2348031234567?text=Hello! I'm interested in your service packages."
+              href="https://wa.me/2348072212171?text=Hello! I'm interested in your service packages."
               target="_blank"
               rel="noopener noreferrer"
               className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300 flex items-center justify-center"

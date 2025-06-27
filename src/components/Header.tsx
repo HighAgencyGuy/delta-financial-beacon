@@ -24,11 +24,11 @@ const Header = () => {
             <div className="flex items-center space-x-4">
               <div className="flex items-center">
                 <Phone className="h-4 w-4 mr-2" />
-                <span>+234 803 123 4567</span>
+                <span>+234 807 221 2171</span>
               </div>
               <div className="flex items-center">
                 <Mail className="h-4 w-4 mr-2" />
-                <span>info@deltafinancialbeacon.com</span>
+                <span>anitatheconqueror@gmail.com</span>
               </div>
             </div>
             <div className="hidden md:block text-sm">
@@ -43,11 +43,15 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 py-2 rounded-lg font-bold text-xl">
-                DFB
+              <div className="w-16 h-16 bg-white rounded-lg mr-3 flex items-center justify-center shadow-md">
+                <img 
+                  src="/lovable-uploads/e1f03353-b026-40cc-8fbe-f5a99d80f660.png" 
+                  alt="NFC Logo" 
+                  className="w-12 h-12 object-contain"
+                />
               </div>
               <div className="ml-3">
-                <h1 className="text-xl font-bold text-gray-900">Delta Financial Beacon</h1>
+                <h1 className="text-xl font-bold text-gray-900">New Foundation Credibooks</h1>
                 <p className="text-sm text-gray-600">Accounting & Financial Consulting</p>
               </div>
             </Link>

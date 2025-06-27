@@ -69,28 +69,28 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      content: "+234 803 123 4567",
-      link: "tel:+2348031234567",
+      content: "+234 807 221 2171",
+      link: "tel:+2348072212171",
       description: "Call us during business hours"
     },
     {
       icon: Mail,
       title: "Email",
-      content: "info@deltafinancialbeacon.com",
-      link: "mailto:info@deltafinancialbeacon.com",
+      content: "anitatheconqueror@gmail.com",
+      link: "mailto:anitatheconqueror@gmail.com",
       description: "We'll respond within 24 hours"
     },
     {
       icon: MessageCircle,
       title: "WhatsApp",
-      content: "+234 803 123 4567",
-      link: "https://wa.me/2348031234567?text=Hello! I'm interested in your accounting services.",
+      content: "+234 807 221 2171",
+      link: "https://wa.me/2348072212171?text=Hello! I'm interested in your accounting services.",
       description: "Instant messaging support"
     },
     {
       icon: MapPin,
       title: "Location",
-      content: "Abraka, Delta State, Nigeria",
+      content: "Delta State University, Abraka, Delta State, Nigeria",
       link: "#",
       description: "Available for in-person meetings"
     }
@@ -105,8 +105,14 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{
+            backgroundImage: `url('/lovable-uploads/467b95cd-6d06-4fde-be74-58dff833854b.png')`
+          }}
+        ></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
               Let's Transform Your
@@ -343,8 +349,32 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Quick Actions */}
+      {/* Google Maps Section */}
       <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Visit Our Location
+            </h2>
+            <p className="text-xl text-gray-600">
+              Located at Delta State University, Abraka, Delta State, Nigeria
+            </p>
+          </div>
+          
+          <div className="bg-gray-200 rounded-xl overflow-hidden shadow-lg">
+            <div className="aspect-video bg-gray-300 flex items-center justify-center">
+              <div className="text-center">
+                <MapPin className="h-12 w-12 text-gray-500 mx-auto mb-4" />
+                <p className="text-gray-600 font-medium">Interactive Map</p>
+                <p className="text-gray-500 text-sm">Delta State University, Abraka</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Actions */}
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -357,7 +387,7 @@ const Contact = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <a
-              href="https://wa.me/2348031234567?text=Hello! I'd like to schedule a consultation."
+              href="https://wa.me/2348072212171?text=Hello! I'd like to schedule a consultation."
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-50 border-2 border-green-200 p-8 rounded-xl text-center hover:bg-green-100 transition-colors group"
@@ -369,7 +399,7 @@ const Contact = () => {
             </a>
 
             <a
-              href="tel:+2348031234567"
+              href="tel:+2348072212171"
               className="bg-blue-50 border-2 border-blue-200 p-8 rounded-xl text-center hover:bg-blue-100 transition-colors group"
             >
               <Phone className="h-12 w-12 text-blue-600 mx-auto mb-4 group-hover:scale-110 transition-transform" />
@@ -379,7 +409,7 @@ const Contact = () => {
             </a>
 
             <a
-              href="mailto:info@deltafinancialbeacon.com"
+              href="mailto:anitatheconqueror@gmail.com"
               className="bg-purple-50 border-2 border-purple-200 p-8 rounded-xl text-center hover:bg-purple-100 transition-colors group"
             >
               <Mail className="h-12 w-12 text-purple-600 mx-auto mb-4 group-hover:scale-110 transition-transform" />

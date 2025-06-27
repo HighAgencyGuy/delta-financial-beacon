@@ -12,12 +12,18 @@ import {
   Heart,
   GraduationCap,
   Church,
-  Rocket,
-  Briefcase
+  User,
+  Briefcase,
+  HelpCircle,
+  Plus,
+  Minus
 } from 'lucide-react';
+import HeroSlideshow from '../components/HeroSlideshow';
 import TestimonialCarousel from '../components/TestimonialCarousel';
 
 const Home = () => {
+  const [expandedFaq, setExpandedFaq] = React.useState<number | null>(null);
+
   const services = [
     {
       icon: Building2,
@@ -42,6 +48,18 @@ const Home = () => {
       title: "Church Finance Hub",
       description: "Transparent financial management for religious organizations",
       color: "bg-purple-600"
+    },
+    {
+      icon: Users,
+      title: "NGO Compliance Kit",
+      description: "Specialized accounting for non-governmental organizations",
+      color: "bg-indigo-600"
+    },
+    {
+      icon: User,
+      title: "Solo Consultant Finance Plan",
+      description: "Simple yet effective financial management for independent professionals",
+      color: "bg-teal-600"
     }
   ];
 
@@ -54,81 +72,74 @@ const Home = () => {
     "24/7 WhatsApp Support"
   ];
 
+  const faqs = [
+    {
+      question: "What makes your services different from other accounting firms?",
+      answer: "We specialize in industry-specific packages tailored to Nigerian businesses, with deep local expertise and personalized attention to each client's unique needs."
+    },
+    {
+      question: "How quickly can you help set up my business accounting system?",
+      answer: "Most setups are completed within 1-2 weeks, depending on your business complexity. We ensure proper training so you can manage day-to-day operations confidently."
+    },
+    {
+      question: "Do you provide ongoing support after the initial setup?",
+      answer: "Yes, all our packages include ongoing support with regular check-ins, financial reviews, and 24/7 WhatsApp support for urgent queries."
+    },
+    {
+      question: "What are your fees for small businesses?",
+      answer: "Our SME Starter Pack ranges from ₦150,000 - ₦300,000 depending on your needs. We offer transparent pricing with no hidden fees and free initial consultation."
+    },
+    {
+      question: "Can you help with tax compliance and government reporting?",
+      answer: "Absolutely! Tax compliance and regulatory reporting are core components of all our service packages, ensuring you stay compliant with Nigerian tax laws."
+    },
+    {
+      question: "Do you work with businesses outside Delta State?",
+      answer: "Yes, we work with clients across Nigeria through virtual consultations and can arrange in-person meetings for major clients when needed."
+    }
+  ];
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                Transform Your Business
-                <span className="block text-yellow-400">Financial Future</span>
-              </h1>
-              <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-                Professional accounting and financial consulting services designed specifically for 
-                Nigerian businesses, SMEs, NGOs, and organizations ready to scale and succeed.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link
-                  to="/contact"
-                  className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-blue-900 px-8 py-4 rounded-lg font-bold text-lg hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center"
-                >
-                  Book Free Consultation
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-                <Link
-                  to="/services"
-                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300 flex items-center justify-center"
-                >
-                  View Services
-                </Link>
-              </div>
-
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {features.map((feature, index) => (
-                  <div key={index} className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-yellow-400 mr-2 flex-shrink-0" />
-                    <span className="text-sm text-blue-100">{feature}</span>
-                  </div>
-                ))}
-              </div>
+      {/* Hero Section with Slideshow */}
+      <section className="relative h-screen">
+        <HeroSlideshow />
+        
+        {/* Hero Content Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              Transform Your Business
+              <span className="block text-yellow-400">Financial Future</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl mx-auto">
+              Professional accounting and financial consulting services designed specifically for 
+              Nigerian businesses, SMEs, NGOs, and organizations ready to scale and succeed.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <Link
+                to="/contact"
+                className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-blue-900 px-8 py-4 rounded-lg font-bold text-lg hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center"
+              >
+                Book Free Consultation
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+              <Link
+                to="/services"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300 flex items-center justify-center"
+              >
+                View Services
+              </Link>
             </div>
 
-            <div className="relative">
-              <div className="bg-white p-8 rounded-2xl shadow-2xl">
-                <div className="text-center mb-6">
-                  <div className="w-32 h-32 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-4xl font-bold">
-                    AO
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Adaeze Okonkwo</h3>
-                  <p className="text-blue-600 font-semibold">ACA, ACCA</p>
-                  <p className="text-gray-600">Chartered Accountant & Financial Consultant</p>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+              {features.map((feature, index) => (
+                <div key={index} className="flex items-center justify-center">
+                  <CheckCircle className="h-5 w-5 text-yellow-400 mr-2 flex-shrink-0" />
+                  <span className="text-sm text-blue-100">{feature}</span>
                 </div>
-                <div className="space-y-3 text-sm text-gray-700">
-                  <div className="flex items-center">
-                    <TrendingUp className="h-4 w-4 text-blue-600 mr-2" />
-                    <span>10+ Years Professional Experience</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Shield className="h-4 w-4 text-blue-600 mr-2" />
-                    <span>Former Senior Accountant, Delta State University</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Users className="h-4 w-4 text-blue-600 mr-2" />
-                    <span>50+ Businesses Transformed</span>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Floating stats */}
-              <div className="absolute -top-6 -right-6 bg-yellow-400 text-blue-900 px-4 py-2 rounded-lg font-bold shadow-lg">
-                ⭐ 5.0 Client Rating
-              </div>
-              <div className="absolute -bottom-6 -left-6 bg-green-500 text-white px-4 py-2 rounded-lg font-bold shadow-lg">
-                ✅ Licensed Professional
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -147,14 +158,14 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div
                 key={index}
                 className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
               >
-                <div className={`${service.color} w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                  <service.icon className="h-6 w-6 text-white" />
+                <div className={`${service.color} w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                  <service.icon className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
                 <p className="text-gray-600 mb-4">{service.description}</p>
@@ -181,88 +192,38 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Preview */}
+      {/* FAQ Section */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Meet Your Trusted Financial Partner
-              </h2>
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                With over a decade of experience in institutional and private accounting, 
-                I bring deep expertise in Nigerian financial regulations, tax compliance, 
-                and industry-specific challenges to help your business thrive.
-              </p>
-              
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start">
-                  <div className="bg-blue-100 p-2 rounded-lg mr-4">
-                    <Calculator className="h-6 w-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Professional Qualifications</h4>
-                    <p className="text-gray-600">ACA, ACCA certified with continuous professional development</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="bg-blue-100 p-2 rounded-lg mr-4">
-                    <TrendingUp className="h-6 w-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Proven Track Record</h4>
-                    <p className="text-gray-600">Successfully managed finances for educational institutions and private clients</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="bg-blue-100 p-2 rounded-lg mr-4">
-                    <Shield className="h-6 w-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Local Expertise</h4>
-                    <p className="text-gray-600">Deep understanding of Nigerian business environment and regulations</p>
-                  </div>
-                </div>
-              </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xl text-gray-600">
+              Get answers to common questions about our accounting services
+            </p>
+          </div>
 
-              <Link
-                to="/about"
-                className="inline-flex items-center text-blue-600 font-semibold text-lg hover:text-blue-800 transition-colors"
-              >
-                Read My Full Story
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </div>
-
-            <div className="relative">
-              <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white">
-                <h3 className="text-2xl font-bold mb-6">Why Choose Delta Financial Beacon?</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center">
-                    <CheckCircle className="h-6 w-6 text-yellow-400 mr-3" />
-                    <span>Personalized attention to your business needs</span>
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+                <button
+                  onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
+                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                >
+                  <span className="font-semibold text-gray-900">{faq.question}</span>
+                  {expandedFaq === index ? 
+                    <Minus className="h-5 w-5 text-blue-600 flex-shrink-0" /> : 
+                    <Plus className="h-5 w-5 text-blue-600 flex-shrink-0" />
+                  }
+                </button>
+                {expandedFaq === index && (
+                  <div className="px-6 pb-4">
+                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
                   </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-6 w-6 text-yellow-400 mr-3" />
-                    <span>Industry-specific expertise and solutions</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-6 w-6 text-yellow-400 mr-3" />
-                    <span>Transparent pricing with no hidden fees</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-6 w-6 text-yellow-400 mr-3" />
-                    <span>Local presence with global standards</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-6 w-6 text-yellow-400 mr-3" />
-                    <span>Ongoing support and consultation</span>
-                  </div>
-                </div>
+                )}
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -291,7 +252,7 @@ const Home = () => {
             </Link>
             
             <a
-              href="https://wa.me/2348031234567?text=Hello! I'm interested in your accounting services."
+              href="https://wa.me/2348072212171?text=Hello! I'm interested in your accounting services."
               target="_blank"
               rel="noopener noreferrer"
               className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300 flex items-center justify-center"

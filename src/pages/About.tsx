@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -38,7 +37,7 @@ const About = () => {
     {
       year: "2022",
       title: "Private Practice",
-      description: "Founded Delta Financial Beacon to serve Nigerian businesses",
+      description: "Founded New Foundation Credibooks to serve Nigerian businesses",
       icon: Briefcase
     },
     {
@@ -84,55 +83,125 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                Meet Adaeze Okonkwo
-                <span className="block text-yellow-400">Your Financial Partner</span>
-              </h1>
-              <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-                A seasoned chartered accountant with over a decade of experience in institutional 
-                and private accounting, dedicated to helping Nigerian businesses achieve financial 
-                clarity and sustainable growth.
-              </p>
-              
-              <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="text-center p-4 bg-blue-800 rounded-lg">
-                  <div className="text-3xl font-bold text-yellow-400">10+</div>
-                  <div className="text-blue-200">Years Experience</div>
-                </div>
-                <div className="text-center p-4 bg-blue-800 rounded-lg">
-                  <div className="text-3xl font-bold text-yellow-400">50+</div>
-                  <div className="text-blue-200">Clients Served</div>
-                </div>
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{
+            backgroundImage: `url('/lovable-uploads/af5447b4-ba1a-4bb5-bc06-0e79f11771d0.png')`
+          }}
+        ></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+              Meet Your Trusted
+              <span className="block text-yellow-400">Financial Partner</span>
+            </h1>
+            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+              A seasoned chartered accountant with over a decade of experience in institutional 
+              and private accounting, dedicated to helping Nigerian businesses achieve financial 
+              clarity and sustainable growth.
+            </p>
+            
+            <div className="grid grid-cols-2 gap-6 mb-8 max-w-md mx-auto">
+              <div className="text-center p-4 bg-blue-800 rounded-lg">
+                <div className="text-3xl font-bold text-yellow-400">10+</div>
+                <div className="text-blue-200">Years Experience</div>
               </div>
-
-              <Link
-                to="/contact"
-                className="inline-flex items-center bg-gradient-to-r from-yellow-400 to-yellow-500 text-blue-900 px-8 py-4 rounded-lg font-bold text-lg hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                Schedule a Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              <div className="text-center p-4 bg-blue-800 rounded-lg">
+                <div className="text-3xl font-bold text-yellow-400">50+</div>
+                <div className="text-blue-200">Clients Served</div>
+              </div>
             </div>
 
-            <div className="relative">
-              <div className="bg-white p-8 rounded-2xl shadow-2xl">
-                <div className="text-center">
-                  <div className="w-40 h-40 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-5xl font-bold">
+            <Link
+              to="/contact"
+              className="inline-flex items-center bg-gradient-to-r from-yellow-400 to-yellow-500 text-blue-900 px-8 py-4 rounded-lg font-bold text-lg hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Schedule a Consultation
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Meet Your Consultant Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Text Content - Left Side */}
+            <div className="order-2 lg:order-1">
+              <div className="text-center lg:text-left">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  Adaeze Okonkwo, ACA, ACCA
+                </h2>
+                <p className="text-xl text-blue-600 font-bold mb-4">
+                  Chartered Accountant & Financial Consultant
+                </p>
+                <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                  With over a decade of experience managing institutional finances at Delta State University 
+                  and now serving private clients, I bring deep expertise in Nigerian financial regulations, 
+                  tax compliance, and industry-specific challenges to help your business thrive.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-start lg:justify-start justify-center">
+                    <div className="bg-blue-100 p-2 rounded-lg mr-4">
+                      <Award className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div className="text-center lg:text-left">
+                      <h4 className="font-semibold text-gray-900">Professional Qualifications</h4>
+                      <p className="text-gray-600">ACA, ACCA certified with continuous professional development</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start lg:justify-start justify-center">
+                    <div className="bg-blue-100 p-2 rounded-lg mr-4">
+                      <TrendingUp className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div className="text-center lg:text-left">
+                      <h4 className="font-semibold text-gray-900">Proven Track Record</h4>
+                      <p className="text-gray-600">Successfully managed finances for educational institutions and private clients</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start lg:justify-start justify-center">
+                    <div className="bg-blue-100 p-2 rounded-lg mr-4">
+                      <Shield className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div className="text-center lg:text-left">
+                      <h4 className="font-semibold text-gray-900">Local Expertise</h4>
+                      <p className="text-gray-600">Deep understanding of Nigerian business environment and regulations</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-blue-50 p-6 rounded-xl">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Client Success Story</h3>
+                  <p className="text-gray-700 italic">
+                    "Working with Adaeze transformed our church's financial management. Her transparent 
+                    reporting system increased our congregation's trust and helped us better steward our resources. 
+                    Our building fund grew by 40% in just one year!"
+                  </p>
+                  <p className="text-blue-600 font-medium mt-2">- Pastor Michael, Faith Community Church</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Image - Right Side */}
+            <div className="order-1 lg:order-2 relative">
+              <div className="relative bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 shadow-2xl overflow-visible">
+                <div className="absolute -top-4 -right-4 w-80 h-80 bg-white rounded-full shadow-xl flex items-center justify-center">
+                  <div className="w-72 h-72 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center text-white text-8xl font-bold">
                     AO
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Adaeze Okonkwo</h3>
-                  <p className="text-blue-600 font-bold text-lg mb-2">ACA, ACCA</p>
-                  <p className="text-gray-600 mb-6">Chartered Accountant & Financial Consultant</p>
-                  
-                  <div className="space-y-3 text-left">
+                </div>
+                
+                <div className="relative z-10 text-white pt-16">
+                  <div className="space-y-3 text-sm">
                     {achievements.slice(0, 3).map((achievement, index) => (
                       <div key={index} className="flex items-center">
-                        <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                        <span className="text-sm text-gray-700">{achievement}</span>
+                        <CheckCircle className="h-5 w-5 text-yellow-400 mr-3 flex-shrink-0" />
+                        <span>{achievement}</span>
                       </div>
                     ))}
                   </div>
@@ -144,7 +213,7 @@ const About = () => {
       </section>
 
       {/* Professional Journey */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -192,10 +261,10 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
+            <div className="bg-gray-50 p-8 rounded-2xl shadow-lg">
               <div className="bg-blue-600 p-4 rounded-lg w-fit mb-6">
                 <Target className="h-8 w-8 text-white" />
               </div>
@@ -223,7 +292,7 @@ const About = () => {
       </section>
 
       {/* Core Values */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -236,7 +305,7 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-shadow">
+              <div key={index} className="bg-white p-8 rounded-xl hover:shadow-lg transition-shadow">
                 <div className="bg-blue-600 p-4 rounded-lg w-fit mb-6">
                   <value.icon className="h-8 w-8 text-white" />
                 </div>
@@ -249,11 +318,11 @@ const About = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-blue-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Delta Financial Beacon?
+              Why Choose New Foundation Credibooks?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Professional qualifications, local expertise, and a proven track record of success
@@ -262,7 +331,7 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {achievements.map((achievement, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                 <div className="flex items-center">
                   <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
                   <span className="font-medium text-gray-900">{achievement}</span>

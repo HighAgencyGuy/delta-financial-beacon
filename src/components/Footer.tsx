@@ -1,21 +1,66 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Facebook, Linkedin, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Linkedin, Instagram, Send } from 'lucide-react';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Newsletter signup:', email);
+    setEmail('');
+  };
+
   return (
     <footer className="bg-gray-900 text-white">
+      {/* Newsletter CTA Section */}
+      <div className="bg-gradient-to-r from-blue-600 to-blue-800 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div className="text-center lg:text-left">
+              <h3 className="text-2xl font-bold mb-4">Join Our Finance Tips Newsletter</h3>
+              <p className="text-blue-100">
+                Get monthly insights, tax tips, and financial advice delivered to your inbox.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 w-full">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email address"
+                  className="flex-grow px-4 py-3 rounded-lg border-0 text-gray-900 focus:ring-2 focus:ring-yellow-400"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="bg-yellow-400 text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors flex items-center justify-center whitespace-nowrap"
+                >
+                  Subscribe
+                  <Send className="ml-2 h-4 w-4" />
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center">
-              <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-3 py-2 rounded-lg font-bold text-lg">
-                DFB
+              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-3">
+                <img 
+                  src="/lovable-uploads/e1f03353-b026-40cc-8fbe-f5a99d80f660.png" 
+                  alt="NFC Logo" 
+                  className="w-8 h-8 object-contain"
+                />
               </div>
-              <div className="ml-3">
-                <h3 className="text-lg font-bold">Delta Financial Beacon</h3>
+              <div>
+                <h3 className="text-lg font-bold">New Foundation Credibooks</h3>
                 <p className="text-sm text-gray-400">Accounting & Financial Consulting</p>
               </div>
             </div>
@@ -85,15 +130,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center">
                 <Phone className="h-5 w-5 mr-3 text-yellow-400" />
-                <span className="text-gray-400">+234 803 123 4567</span>
+                <span className="text-gray-400">+234 807 221 2171</span>
               </div>
               <div className="flex items-center">
                 <Mail className="h-5 w-5 mr-3 text-yellow-400" />
-                <span className="text-gray-400">info@deltafinancialbeacon.com</span>
+                <span className="text-gray-400">anitatheconqueror@gmail.com</span>
               </div>
               <div className="flex items-start">
                 <MapPin className="h-5 w-5 mr-3 text-yellow-400 mt-1" />
-                <span className="text-gray-400">Abraka, Delta State, Nigeria</span>
+                <span className="text-gray-400">Delta State University, Abraka, Delta State, Nigeria</span>
               </div>
             </div>
 
@@ -116,7 +161,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2024 Delta Financial Beacon. All rights reserved. | 
+            © 2024 New Foundation Credibooks. All rights reserved. | 
             <span className="ml-2">Professional Accounting & Financial Consulting Services</span>
           </p>
         </div>
