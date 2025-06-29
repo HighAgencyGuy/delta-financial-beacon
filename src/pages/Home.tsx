@@ -13,17 +13,12 @@ import {
   GraduationCap,
   Church,
   User,
-  Briefcase,
-  HelpCircle,
-  Plus,
-  Minus
+  Briefcase
 } from 'lucide-react';
 import HeroSlideshow from '../components/HeroSlideshow';
 import TestimonialCarousel from '../components/TestimonialCarousel';
 
 const Home = () => {
-  const [expandedFaq, setExpandedFaq] = React.useState<number | null>(null);
-
   const services = [
     {
       icon: Building2,
@@ -72,33 +67,6 @@ const Home = () => {
     "24/7 WhatsApp Support"
   ];
 
-  const faqs = [
-    {
-      question: "What makes your services different from other accounting firms?",
-      answer: "We specialize in industry-specific packages tailored to Nigerian businesses, with deep local expertise and personalized attention to each client's unique needs."
-    },
-    {
-      question: "How quickly can you help set up my business accounting system?",
-      answer: "Most setups are completed within 1-2 weeks, depending on your business complexity. We ensure proper training so you can manage day-to-day operations confidently."
-    },
-    {
-      question: "Do you provide ongoing support after the initial setup?",
-      answer: "Yes, all our packages include ongoing support with regular check-ins, financial reviews, and 24/7 WhatsApp support for urgent queries."
-    },
-    {
-      question: "What are your fees for small businesses?",
-      answer: "Our SME Starter Pack ranges from ₦150,000 - ₦300,000 depending on your needs. We offer transparent pricing with no hidden fees and free initial consultation."
-    },
-    {
-      question: "Can you help with tax compliance and government reporting?",
-      answer: "Absolutely! Tax compliance and regulatory reporting are core components of all our service packages, ensuring you stay compliant with Nigerian tax laws."
-    },
-    {
-      question: "Do you work with businesses outside Delta State?",
-      answer: "Yes, we work with clients across Nigeria through virtual consultations and can arrange in-person meetings for major clients when needed."
-    }
-  ];
-
   return (
     <div className="min-h-screen">
       {/* Hero Section with Slideshow */}
@@ -145,6 +113,27 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Mission Statement Section with Parallax */}
+      <section className="relative py-20 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-fixed"
+          style={{
+            backgroundImage: `url('/lovable-uploads/44770de8-01ca-4200-9e29-312a2b8db62e.png')`
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-blue-900 bg-opacity-80"></div>
+        
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Mission</h2>
+          <p className="text-xl md:text-2xl leading-relaxed">
+            At New Foundation Credibooks, our mission is to empower Nigerian businesses, institutions, 
+            and nonprofits with clear, reliable, and professional accounting services. We are committed 
+            to promoting financial clarity, compliance, and growth through personalized solutions tailored 
+            to each industry's unique needs.
+          </p>
+        </div>
+      </section>
+
       {/* Services Overview */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -188,42 +177,6 @@ const Home = () => {
               View All Service Packages
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-xl text-gray-600">
-              Get answers to common questions about our accounting services
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-                <button
-                  onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
-                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
-                >
-                  <span className="font-semibold text-gray-900">{faq.question}</span>
-                  {expandedFaq === index ? 
-                    <Minus className="h-5 w-5 text-blue-600 flex-shrink-0" /> : 
-                    <Plus className="h-5 w-5 text-blue-600 flex-shrink-0" />
-                  }
-                </button>
-                {expandedFaq === index && (
-                  <div className="px-6 pb-4">
-                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
-                  </div>
-                )}
-              </div>
-            ))}
           </div>
         </div>
       </section>

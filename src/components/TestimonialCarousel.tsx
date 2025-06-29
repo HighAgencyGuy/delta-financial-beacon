@@ -12,7 +12,7 @@ const TestimonialCarousel = () => {
       position: "Medical Director, Sunrise Clinic",
       content: "Delta Financial Beacon transformed our clinic's financial management. Their Health Finance Suite helped us streamline our billing, reduce overhead costs by 30%, and ensure compliance with healthcare regulations. Highly professional service!",
       rating: 5,
-      image: "👨‍⚕️"
+      image: "/lovable-uploads/c1c23f46-146d-45cf-b747-c2fa2c8059e4.png"
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const TestimonialCarousel = () => {
       position: "Senior Pastor, Grace Community Church",
       content: "The Church Finance Hub package has been a blessing to our ministry. They helped us set up proper financial controls, manage our tithes and offerings transparently, and prepare accurate reports for our congregation. Truly blessed by their service!",
       rating: 5,
-      image: "👩‍💼"
+      image: "/lovable-uploads/edc85e18-4cb7-4431-a3ee-87865dc9aa91.png"
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ const TestimonialCarousel = () => {
       position: "CEO, TechStart Solutions",
       content: "As a startup founder, I needed someone who understood both business and finance. Their Startup CFO-as-a-Service has been invaluable in helping us secure funding, manage cash flow, and scale our operations. Excellent expertise!",
       rating: 5,
-      image: "👨‍💻"
+      image: "/lovable-uploads/27dc16bc-5a2f-49a6-ab5d-0a92daf3a0e2.png"
     },
     {
       id: 4,
@@ -36,7 +36,7 @@ const TestimonialCarousel = () => {
       position: "Principal, Bright Future Academy",
       content: "The EduFinance Essentials package helped our school manage student fees, track expenses, and prepare for government audits seamlessly. Their understanding of the education sector in Nigeria is outstanding. Very satisfied!",
       rating: 5,
-      image: "👩‍🏫"
+      image: "/lovable-uploads/77325faa-106a-4926-93a2-df0865931557.png"
     }
   ];
 
@@ -73,7 +73,15 @@ const TestimonialCarousel = () => {
             {testimonials.map((testimonial) => (
               <div key={testimonial.id} className="w-full flex-shrink-0 p-8 md:p-12">
                 <div className="text-center">
-                  <div className="text-6xl mb-4">{testimonial.image}</div>
+                  <div className="relative mb-6">
+                    <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-4 border-blue-600 shadow-lg">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
                   
                   <div className="flex justify-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -81,9 +89,13 @@ const TestimonialCarousel = () => {
                     ))}
                   </div>
 
-                  <blockquote className="text-lg text-gray-700 mb-6 italic leading-relaxed">
-                    "{testimonial.content}"
-                  </blockquote>
+                  <div className="relative mb-6">
+                    <div className="text-6xl text-blue-200 absolute -top-4 -left-4">"</div>
+                    <blockquote className="text-lg text-gray-700 italic leading-relaxed relative z-10">
+                      {testimonial.content}
+                    </blockquote>
+                    <div className="text-6xl text-blue-200 absolute -bottom-8 -right-4">"</div>
+                  </div>
 
                   <div>
                     <p className="font-semibold text-gray-900 text-lg">{testimonial.name}</p>
